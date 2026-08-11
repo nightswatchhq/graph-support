@@ -89,3 +89,8 @@ every one of them has caught somebody who then waited days for help that was nev
 ## When you genuinely cannot tell
 
 Open an issue. Working out which of these boxes you are in is the job.
+
+If you would rather ask a person than fill in a form, the
+[Night's Watch Discord](https://discord.gg/CQewvyJ69Y) is where the people who do this
+routing actually sit. Indexers, subgraph developers and delegators in one room, and
+somebody in there has usually hit your problem before.

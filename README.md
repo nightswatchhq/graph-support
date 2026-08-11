@@ -6,9 +6,18 @@ This is community triage for subgraph developers, indexers, delegators and anyon
 using The Graph. You get a root cause, a workaround, or the name of the party who can
 actually fix it. You do not get "I'll raise this internally" and then silence.
 
-Run by [The Night's Watch](https://github.com/nightswatchhq). We are not Edge & Node, we
-are not The Graph Foundation, and we have no authority over either. We are operators and
-engineers who use this network every day and got tired of watching questions go unanswered.
+Run by **The Night's Watch**, an open community for the people who build and hold the data
+layer of web3. We are not Edge & Node, we are not The Graph Foundation, and we have no
+authority over either. We are operators and engineers who use this network every day and
+got tired of watching questions go unanswered.
+
+### 👉 [Join the Night's Watch Discord](https://discord.gg/CQewvyJ69Y)
+
+File the issue here so the answer is permanent and searchable. Come to the Discord if you
+want to talk it through while someone is actually looking at it, if your problem is
+urgent, or if you would rather be told in a sentence than wait for a write-up. Indexers,
+subgraph developers and delegators are all in there, and on most days that room will
+answer you faster than any official channel will.
 
 ## What we promise
 
@@ -71,5 +80,8 @@ Answer someone. That is the whole contribution model. If you are an indexer and 
 names your address, you are the fastest path to an answer and we would rather have you
 than our guess.
 
-Chat is in the [Night's Watch Discord](https://github.com/nightswatchhq), but the answer
-belongs here where it can be found again.
+The people doing the answering coordinate in the
+[Night's Watch Discord](https://discord.gg/CQewvyJ69Y). If you know things about this
+ecosystem that are not written down anywhere, which is most of what anybody knows, that is
+where to come and be useful. The answer still belongs here afterwards, where it can be
+found again.

@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: Join the Night's Watch Discord
+    url: https://discord.gg/CQewvyJ69Y
+    about: Talk it through with indexers and subgraph developers while someone is looking at it. Faster than waiting for a write-up if your problem is urgent. File the issue too, so the answer is permanent.
   - name: Decode a gateway error yourself
     url: https://github.com/nightswatchhq/graph-support/blob/main/reference/gateway-errors.md
     about: What "bad indexers", BadResponse(400), no attestation and too far behind actually mean. Verified against gateway source. Read this first if your error looks like that.
