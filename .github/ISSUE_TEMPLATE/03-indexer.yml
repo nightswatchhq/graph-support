@@ -1,0 +1,56 @@
+name: Indexer or operator problem
+description: For people running indexers. Chain clients, RPC, snapshots, PoI divergence, allocations, Horizon, staking.
+title: "[indexer] "
+labels: ["status/triage", "area/indexer"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste an operator key, a mnemonic, a keystore, or the contents of an
+        `.env`.** If you need to show configuration, redact the secrets first.
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Area
+      options:
+        - Chain client, RPC or snapshot
+        - graph-node behaviour
+        - PoI divergence or wrong data being served
+        - Allocations, rewards or Horizon staking
+        - indexer-agent / indexer-service / indexer-cli
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: symptom
+    attributes:
+      label: What is happening
+      description: Be specific about versions. "graph-node 1.42, base-reth-node 1.2.0" is diagnosable; "the latest" is not.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or output
+      description: Trim to the relevant lines but do not paraphrase them.
+      render: shell
+  - type: input
+    id: deployment
+    attributes:
+      label: Deployment ID, if one is involved
+      placeholder: QmasYjypV6nTLp4iNH4Vjf7fksRNxAkAskqDdKf2DCsQkV
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: graph-node version, chain client and version, how the chain data was obtained (synced from genesis, or which snapshot), hardware if relevant.
+      value: |
+        - graph-node:
+        - chain client:
+        - chain data source:
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you have already tried

@@ -1,0 +1,69 @@
+name: Query fails or returns wrong data
+description: A query against a subgraph errors, returns nothing, or returns data you know is wrong or stale.
+title: "[query] "
+labels: ["status/triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not paste an API key.** A gateway query URL contains one. Redact it as
+        `gateway.thegraph.com/api/<KEY>/...`. If you have already posted a key anywhere,
+        rotate it rather than editing the message.
+
+        If your error contains `bad indexers`, the
+        [decoder](https://github.com/nightswatchhq/graph-support/blob/main/reference/gateway-errors.md)
+        may answer it in one minute. Still file if it does not.
+  - type: input
+    id: deployment
+    attributes:
+      label: Deployment ID
+      description: The `Qm...` deployment ID, which is what identifies the running code. If you only have the subgraph ID, give that and say which it is.
+      placeholder: QmZsgJLiLQKpb8hxTmQ5LWyrFVvfWzVaL4WK8dfFBn7EeK
+    validations:
+      required: true
+  - type: input
+    id: chain
+    attributes:
+      label: Chain
+      placeholder: arbitrum-one
+    validations:
+      required: true
+  - type: dropdown
+    id: endpoint
+    attributes:
+      label: Where are you querying?
+      options:
+        - The decentralised network gateway (gateway.thegraph.com)
+        - Subgraph Studio (api.studio.thegraph.com)
+        - A specific indexer directly
+        - My own graph-node
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: The exact response
+      description: Copy the whole thing. For `bad indexers`, the map of addresses is the diagnosis, so do not trim it.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: query
+    attributes:
+      label: The query
+      render: graphql
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+      description: If the data is wrong rather than missing, say how you know what the right answer is.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: When it started, and what you have already tried
+      description: Did it ever work? Does it fail every time or intermittently? Does the same query work against a different deployment or chain?

@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Decode a gateway error yourself
+    url: https://github.com/nightswatchhq/graph-support/blob/main/reference/gateway-errors.md
+    about: What "bad indexers", BadResponse(400), no attestation and too far behind actually mean. Verified against gateway source. Read this first if your error looks like that.
+  - name: Work out who owns the problem
+    url: https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md
+    about: Which failures only Edge & Node can fix, which belong to one indexer, and which are yours.
+  - name: Search past answers
+    url: https://github.com/nightswatchhq/graph-support/issues?q=is%3Aissue
+    about: Every question we have answered, open and closed. Search your error text here before filing.
+  - name: The Graph Discord
+    url: https://discord.gg/graphprotocol
+    about: For Subgraph Studio and hosted infrastructure, Edge & Node are the only people who can act. Ask them there, and file here too if you want it tracked.

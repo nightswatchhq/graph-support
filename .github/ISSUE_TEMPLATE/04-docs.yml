@@ -1,0 +1,40 @@
+name: The documentation is wrong or unclear
+description: Something in the official docs is incorrect, ambiguous, or led you into a mistake.
+title: "[docs] "
+labels: ["status/triage", "area/docs", "owner/upstream"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A surprising share of the questions that reach us are not bugs. They are the
+        documentation being ambiguous, and the same person then losing two days to it.
+
+        We will turn a good report here into a pull request against
+        [graphprotocol/docs](https://github.com/graphprotocol/docs) and link it back. You
+        are also very welcome to send that PR yourself, which is faster.
+  - type: input
+    id: url
+    attributes:
+      label: Page
+      placeholder: https://thegraph.com/docs/en/subgraphs/querying/graphql-api/
+    validations:
+      required: true
+  - type: textarea
+    id: says
+    attributes:
+      label: What it says
+      description: Quote the passage.
+    validations:
+      required: true
+  - type: textarea
+    id: reality
+    attributes:
+      label: What actually happens
+      description: What did you do, expecting the documented behaviour, and what did you get?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording
+      description: Optional, but the fastest route to a merged fix.

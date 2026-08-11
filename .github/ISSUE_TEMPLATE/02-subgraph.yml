@@ -1,0 +1,70 @@
+name: Subgraph will not deploy, sync, or has failed
+description: Deployment errors, a subgraph stuck syncing, stuck at 99%, or a failed deployment.
+title: "[subgraph] "
+labels: ["status/triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not paste a deploy key or an API key.**
+
+        Worth knowing before you file: if the error contains a `10.x.x.x` address, that is
+        inside Edge & Node's private network and only they can act on it. We will still
+        track it and chase, but see
+        [who owns what](https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md).
+  - type: input
+    id: deployment
+    attributes:
+      label: Deployment ID
+      placeholder: QmcLh53r4ThbKLTAyPPXxbLGPtEYgjJyC74ryMbRpR8dor
+    validations:
+      required: true
+  - type: input
+    id: chain
+    attributes:
+      label: Chain
+      placeholder: arbitrum-one
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where is it running?
+      options:
+        - Subgraph Studio
+        - Published to the decentralised network
+        - My own graph-node
+        - Not sure
+    validations:
+      required: true
+  - type: dropdown
+    id: symptom
+    attributes:
+      label: Symptom
+      options:
+        - Deploy command fails
+        - Stuck syncing, progress not moving
+        - Stuck near the end (99%)
+        - Marked failed with an indexing error
+        - Synced but the data is wrong or incomplete
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Exact error text or status output
+      description: Include the graph-node log lines if you have them, and the block number it stopped at.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: repo
+    attributes:
+      label: Manifest and mappings
+      description: A link to the repo, or the relevant part of subgraph.yaml plus the handler involved. Reproducible reports get fixed; unreproducible ones get guesses.
+  - type: textarea
+    id: context
+    attributes:
+      label: What changed
+      description: Did a previous version work? What is different about this one? How long has it been stuck?
