@@ -136,6 +136,75 @@ The `skip` case specifically: indexers can set `GRAPH_GRAPHQL_MAX_SKIP`, and dee
 is cursor pagination, ordering by `id` and filtering `id_gt` on the last row you saw. It
 is also considerably faster than deep skip.
 
+## The same errors, in the form a gateway operator will quote at you
+
+If you ask E&N to look in the gateway logs, what comes back often looks like this, and it is
+not in any of the tables above:
+
+```
+IndexerErrors({0xbdfb5ee5a2abf4fc7bb1bd1221067aef7f9de491: Unavailable(TooFarBehind), 0xfeff9093f6b32d0e5cddba743b06a1fedb87c004: Unavailable(TooFarBehind)})
+```
+
+That is the same value you would have received in a response body, printed with `{:?}`
+instead of `{}`. `IndexerErrors` derives `Debug` but implements `Display` by hand, so the
+log form shows Rust variant names and the response form shows the human strings. Nothing
+else differs. Translate as follows:
+
+| In a response body | In the gateway's logs |
+| --- | --- |
+| `bad indexers: {...}` | `IndexerErrors({...})` |
+| `Unavailable(too far behind)` | `Unavailable(TooFarBehind)` |
+| `Unavailable(no status: <msg>)` | `Unavailable(NoStatus("<msg>"))` |
+| `Unavailable(not supported: <msg>)` | `Unavailable(NotSupported("<msg>"))` |
+| `Unavailable(blocked (<reason>))` | `Unavailable(Blocked("<reason>"))` |
+| `Unavailable(missing block: N, latest: M)` | `Unavailable(MissingBlock(MissingBlockError { missing: Some(N), latest: Some(M) }))` |
+| `Unavailable(internal error: <msg>)` | `Unavailable(Internal("<msg>"))` |
+| `BadResponse(<detail>)` | `BadResponse("<detail>")` |
+| `Timeout` | `Timeout` |
+
+One consequence is worth stating on its own, because it causes real confusion. A bare
+`IndexerErrors({...})` in a log line is **not** proof that your query failed. The error
+returned to a client is `Error::BadIndexers(IndexerErrors)`, which renders with the
+`bad indexers: ` prefix, and it is only produced when every candidate was rejected. An
+`IndexerErrors` map without that prefix is a record of which candidates were dropped
+during selection, on a query that may well have been served perfectly well by the ones
+that are not in the map. Read the absences, not just the entries.
+
+**Provenance.** `src/errors.rs` in `edgeandnode/gateway`, read from `main` on 2026-08-13.
+The variant set is unchanged from the v27.6.0 behaviour described above.
+
+## An indexer at chain head still cannot serve history it has pruned
+
+Every table on this page is about indexers that are behind. The opposite failure is
+commoner than it looks and produces no distinctive error at all: an indexer that is
+**synced, healthy, at chain head, and holds only the last few hours of blocks.**
+
+graph-node prunes. An operator can retain a rolling window rather than the full history of
+a deployment, and that window moves forward as the chain advances. Their status endpoint
+reports it as `earliestBlock`:
+
+```graphql
+{ indexingStatuses(subgraphs: ["Qm..."]) {
+    synced health
+    chains { earliestBlock { number } latestBlock { number } chainHeadBlock { number } }
+} }
+```
+
+`latestBlock - earliestBlock` is the only number that tells you how much history that
+operator can actually answer for. It is entirely normal for it to be four orders of
+magnitude smaller than the deployment's real range.
+
+This is why a subgraph can have several allocated, healthy indexers and still be served by
+exactly one of them for anything historical, and it is the usual cause of the report that
+*recent queries always work but queries over a range fail intermittently*. A head query has
+several candidates. A query reaching back beyond the pruning window has one, and when that
+one is momentarily busy, restarting, or reallocating, the query fails. Nothing in the error
+says "pruned"; you get `missing block`, or a `BadResponse`, or a `bad indexers` map that
+looks like bad luck.
+
+Count your **historical** coverage, not your allocation count, before concluding the
+network is unreliable.
+
 ## What this error cannot tell you
 
 An empty result is not an error. An indexer that has diverged and serves `{"data":{"things":[]}}`

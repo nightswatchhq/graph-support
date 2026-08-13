@@ -18,6 +18,8 @@ amount of clever configuration on your side will move them.
 | Studio slow, timing out, or not loading | Their hosting. |
 | Explorer search returning nothing | Their frontend and their search index. |
 | A subgraph stuck syncing **on the upgrade indexer specifically** | The upgrade indexer is theirs. |
+| The upgrade indexer reporting `health: unhealthy` on your deployment | Only they can rewind or resync it. Ask for it by name: "please rewind the deployment". |
+| A contract call reverting **only** on the upgrade indexer, at a block other indexers handled fine | Their archive RPC, not your mapping. But see the last table. |
 | `auth error` on a valid, funded API key | Their gateway's auth path. |
 | Studio query URL serving the wrong version | Their routing. |
 
@@ -37,6 +39,7 @@ Symptoms that name an address, or that disagree between operators.
 | `Unavailable(too far behind)` from one address | That operator is behind or stalled. |
 | One indexer returns `[]` while others return rows | Divergence. Their database is wrong and they do not know it. |
 | `Unavailable(no status: indexer not available)` | Their indexer-service is down. |
+| Head queries fine, historical queries fail on and off | Somebody is pruning. Check `earliestBlock` on each allocation, not just `synced`. |
 
 **How to find out who:** every allocation on a deployment is public. Look the deployment
 ID up on [Lodestar](https://www.lodestar-dashboard.com) to see who is allocated and what
@@ -82,6 +85,8 @@ is precisely why it is worth filing here as well so the next person finds it.
 | Data stops at a date, subgraph is at chain head with no errors | The contract stopped emitting. Check the source, not the indexer. |
 | A field is `null` that should have been fetched from IPFS | graph-node tried once at index time and wrote `null`. It does not retry. Only a redeploy re-attempts. Fetch it client-side instead. |
 | Studio `/latest` not serving your newest deployment | `/latest` does not mean "most recently deployed". Address the version label explicitly. |
+| `Mapping aborted ... Call reverted, ... consider using try_<method>` | A bare contract call in a handler. One operator's RPC answering differently is enough to abort it. `try_` returns a reverted result instead of killing the handler. |
+| More signal will fix my query reliability | It will not. Signal attracts allocations. It does not sync a lagging indexer, unprune a pruned one, or change how the gateway picks. |
 
 None of these are anyone else's to fix, but all of them are worth asking about, because
 every one of them has caught somebody who then waited days for help that was never coming.
