@@ -1,0 +1,34 @@
+# yatr - https://github.com/cargopete/yatr
+#
+# Task names are the same across every nightswatchhq repo, so `yatr ci` means
+# the same thing wherever you are. Note that `ci` is deliberately not called
+# `check`: `yatr check` is a builtin that validates this file, and it shadows
+# any task of that name without warning.
+
+# A triage repo: the issues are the product and the reference/ notes support
+# them. Nothing builds, so the tasks guard the prose.
+
+[settings]
+cache = true
+
+[tasks.links]
+desc = "Fail if a relative markdown link points at a file that is not there"
+shell = true
+sources = ["**/*.md"]
+run = ['''
+missing=0
+for f in $(git ls-files '*.md'); do
+  d=$(dirname "$f")
+  for l in $(grep -oE '\]\([^)]+\)' "$f" | sed 's/^](//;s/)$//' | grep -vE '^(https?:|mailto:|#|<)' | sed 's/#.*$//'); do
+    [ -z "$l" ] && continue
+    if [ ! -e "$d/$l" ]; then echo "broken: $f -> $l"; missing=$((missing+1)); fi
+  done
+done
+if [ "$missing" -ne 0 ]; then echo "$missing broken relative link(s)"; exit 1; fi
+echo "all relative markdown links resolve"
+''']
+
+[tasks.ci]
+desc = "What CI runs: links"
+depends = ["links"]
+run = []
