@@ -9,6 +9,9 @@ contact_links:
   - name: Work out who owns the problem
     url: https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md
     about: Which failures only Edge & Node can fix, which belong to one indexer, and which are yours.
+  - name: Check the symptom index first
+    url: https://learn-thegraph.com/diagnose/
+    about: What you are seeing, what usually causes it, and the check that tells the causes apart. Nearly everything in it fails silently, which is why it persists. Built from the answers in this repo.
   - name: Search past answers
     url: https://github.com/nightswatchhq/graph-support/issues?q=is%3Aissue
     about: Every question we have answered, open and closed. Search your error text here before filing.

@@ -68,6 +68,9 @@ Some answers already exist. Check before filing:
   belong to an individual indexer, and which are yours.
 - [Closed issues](https://github.com/nightswatchhq/graph-support/issues?q=is%3Aissue+is%3Aclosed)
   — every past answer, searchable. This is the point of the repo.
+- [The symptom index](https://learn-thegraph.com/diagnose/) — what you are seeing, what
+  usually causes it, and how to tell which one it is. Built from the write-ups here, so if
+  your symptom is in it there is often a worked case attached.
 
 ## How we work
 

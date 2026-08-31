@@ -1,0 +1,81 @@
+name: A symptom missing from the diagnostic index
+description: Something broke in a way the Academy's symptom index does not cover, and the next person should not have to work it out again.
+title: "[symptom] "
+labels: ["status/triage", "kind/symptom"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The [symptom index](https://learn-thegraph.com/diagnose/) lists failures somebody has
+        already written up, indexed by what you are seeing rather than by which part of the
+        protocol owns it. It is deliberately about the quiet ones. A process that crashes gets
+        restarted by something you already have; a subgraph that silently stopped three months
+        ago does not.
+
+        If yours is not there, this is the form. Answering it gets you triaged like any other
+        issue, and if the diagnosis holds up the symptom goes into the index with your issue
+        linked from it.
+
+        **Do not paste an API key, a private key, a mnemonic or an operator keyfile.** A
+        gateway query URL contains a key. Redact it. If you have already posted one anywhere,
+        rotate it rather than editing the message.
+  - type: textarea
+    id: symptom
+    attributes:
+      label: What you saw
+      description: >
+        Say it the way you would say it out loud, not the way a manual would. "My allocation is
+        open and healthy but earns nothing" is the register. It is going to become the title of
+        an entry somebody searches for while their thing is broken.
+      placeholder: My query returns rows sometimes and an empty array other times, with no error.
+    validations:
+      required: true
+  - type: dropdown
+    id: who
+    attributes:
+      label: Who hits this
+      description: Which shelf of the index it belongs on.
+      options:
+        - Reading data
+        - Building a subgraph
+        - Running an indexer
+        - Delegating
+        - Curating
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: quiet
+    attributes:
+      label: How did it present itself?
+      description: >
+        The index is mostly about failures that raise nothing. Did anything error, or did every
+        tool you have report health while the thing was broken? If something did error, paste
+        the exact text, whole.
+    validations:
+      required: true
+  - type: textarea
+    id: cause
+    attributes:
+      label: What it turned out to be, if you know
+      description: >
+        Leave this blank if you do not know yet. That is a normal state and it is what triage is
+        for. If you do know, say how you found out, because that is the part the next person
+        needs more than the answer.
+  - type: textarea
+    id: tell
+    attributes:
+      label: How would somebody tell it was this and not something else?
+      description: >
+        The most valuable field on this form. A cause without a check is a guess. What command,
+        query or comparison distinguishes this from the other things that look identical?
+  - type: input
+    id: deployment
+    attributes:
+      label: Deployment ID, if one is involved
+      placeholder: QmZsgJLiLQKpb8hxTmQ5LWyrFVvfWzVaL4WK8dfFBn7EeK
+  - type: input
+    id: chain
+    attributes:
+      label: Chain, if one is involved
+      placeholder: arbitrum-one
