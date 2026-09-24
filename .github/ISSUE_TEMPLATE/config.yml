@@ -8,7 +8,7 @@ contact_links:
     about: What "bad indexers", BadResponse(400), no attestation and too far behind actually mean. Verified against gateway source. Read this first if your error looks like that.
   - name: Work out who owns the problem
     url: https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md
-    about: Which failures only Edge & Node can fix, which belong to one indexer, and which are yours.
+    about: Which failures only The Graph Foundation can fix, which belong to one indexer, and which are yours.
   - name: Check the symptom index first
     url: https://learn-thegraph.com/diagnose/
     about: What you are seeing, what usually causes it, and the check that tells the causes apart. Nearly everything in it fails silently, which is why it persists. Built from the answers in this repo.
@@ -17,4 +17,4 @@ contact_links:
     about: Every question we have answered, open and closed. Search your error text here before filing.
   - name: The Graph Discord
     url: https://discord.gg/graphprotocol
-    about: For Subgraph Studio and hosted infrastructure, Edge & Node are the only people who can act. Ask them there, and file here too if you want it tracked.
+    about: For Subgraph Studio and hosted infrastructure, The Graph Foundation are the only people who can act. Ask them there, and file here too if you want it tracked.
