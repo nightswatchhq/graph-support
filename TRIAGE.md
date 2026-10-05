@@ -8,7 +8,7 @@ This is the process. It binds us as much as anyone who turns up to help.
    properly yet, the reply says so and says when, rather than going quiet.
 2. **Classify.** Label the area and the owning party. See
    [reference/escalation.md](reference/escalation.md). If the owner is not us, say so in
-   the thread immediately. A fast, honest "this is Edge & Node's and only they can fix it"
+   the thread immediately. A fast, honest "this is the Foundation's and only they can fix it"
    on day one is worth more than a week of us pretending otherwise.
 3. **Investigate.** Reproduce where possible. Say what was actually checked and what was
    not. An untested theory is labelled as a theory.
@@ -54,8 +54,11 @@ title. `bad indexers: BadResponse(400) on every allocated indexer` is findable.
 
 **Owner** — who can actually fix it. Set this early, it is the most useful label here.
 
-`owner/edge-and-node`, `owner/foundation`, `owner/indexer`, `owner/upstream`,
-`owner/reporter`, `owner/watch`
+`owner/foundation`, `owner/indexer`, `owner/upstream`, `owner/reporter`, `owner/watch`
+
+`owner/edge-and-node` is retired. It stays on issues from before the August 2026 handover,
+when Edge & Node ran Studio, the Explorer, the upgrade indexer and the gateway. Anything
+current on that infrastructure is `owner/foundation`.
 
 **Status**
 
@@ -99,7 +102,7 @@ and get triaged like anything else.
 
 ## Handing off
 
-When something belongs to E&N, the Foundation or upstream, we do three things: say so in
+When something belongs to the Foundation, an indexer or upstream, we do three things: say so in
 the thread, raise it wherever they actually read, and record in the thread where and when
 we raised it. Then we label `status/handed-off` and leave it open until there is an
 outcome. Handed off is not closed. It is the state where somebody else has the ball and we

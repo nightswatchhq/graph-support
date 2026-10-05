@@ -9,7 +9,7 @@ body:
         **Do not paste a deploy key or an API key.**
 
         Worth knowing before you file: if the error contains a `10.x.x.x` address, that is
-        inside Edge & Node's private network and only they can act on it. We will still
+        inside The Graph Foundation's private network and only they can act on it. We will still
         track it and chase, but see
         [who owns what](https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md).
   - type: input

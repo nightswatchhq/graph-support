@@ -6,11 +6,13 @@ someone who could not have fixed them. This is the routing map.
 We will do this routing for you if you open an issue. It is written down so you can skip
 the wait when the answer is obvious.
 
-## Only Edge & Node can fix these
+## Only The Graph Foundation can fix these
 
-E&N run Subgraph Studio, the Explorer, the upgrade indexer and the public gateway at
-`gateway.thegraph.com`. These are closed systems. No indexer, no community member and no
-amount of clever configuration on your side will move them.
+The Graph Foundation runs Subgraph Studio, the Explorer, the upgrade indexer and the
+public gateway at `gateway.thegraph.com`. Until August 2026 these were Edge & Node's, and
+the handover is still in progress, so some E&N people still answer in the channels. That
+does not change who owns the fix. These are closed systems. No indexer, no community
+member and no amount of clever configuration on your side will move them.
 
 | Symptom | Why it is theirs |
 | --- | --- |
@@ -24,7 +26,7 @@ amount of clever configuration on your side will move them.
 | Studio query URL serving the wrong version | Their routing. |
 
 **Where to go:** the `#subgraph-development` and Studio channels in [The Graph
-Discord](https://discord.gg/graphprotocol), tagging the E&N support handles on duty.
+Discord](https://discord.gg/graphprotocol), tagging the Foundation's support handles on duty.
 Open an issue here too if you want it tracked and chased rather than forgotten, but be
 clear-eyed that we can only apply pressure and publish the outcome. We cannot restart
 their graph-node.

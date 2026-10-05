@@ -34,7 +34,8 @@ answer you faster than any official channel will.
    | `out of scope` | Honest no, with somewhere better to go. |
 
 3. **A fast no.** If your problem is Subgraph Studio, the upgrade indexer, or anything
-   else running on Edge & Node's own infrastructure, nobody outside E&N can fix it. We
+   else running on The Graph Foundation's own infrastructure, nobody outside the
+   Foundation can fix it. We
    will tell you that within a day and point you at them, so you are not also waiting on us.
 
 ## What we do not promise
@@ -64,7 +65,7 @@ Some answers already exist. Check before filing:
 - [Decoding gateway errors](reference/gateway-errors.md) — what `bad indexers`,
   `BadResponse(400)`, `no attestation: indexing_error` and `too far behind` actually mean,
   verified against gateway source.
-- [Who owns what](reference/escalation.md) — which failures E&N alone can fix, which
+- [Who owns what](reference/escalation.md) — which failures the Foundation alone can fix, which
   belong to an individual indexer, and which are yours.
 - [Closed issues](https://github.com/nightswatchhq/graph-support/issues?q=is%3Aissue+is%3Aclosed)
   — every past answer, searchable. This is the point of the repo.
