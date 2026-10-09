@@ -82,7 +82,7 @@ failures somebody has written up. This repository is where those write-ups come 
 
 **When an issue closes with a failure mode the index does not already carry, open a pull
 request against
-[`src/lib/diagnostics.ts`](https://github.com/nightswatchhq/graph-academy-v2/blob/main/src/lib/diagnostics.ts)
+[`src/lib/diagnostics.ts`](https://github.com/nuthatch-org/graph-academy-v2/blob/main/src/lib/diagnostics.ts)
 adding it, and link the issue as a worked case.** Not optional, and not a nice-to-have.
 Without it this repository is a pile of threads that happen to be searchable, and the
 person hitting the same thing next year has to already know the words we used.
@@ -97,7 +97,7 @@ What the index wants is narrower than what a good issue contains:
 
 Three of the causes in the index today came out of closed issues here rather than from
 anybody planning them, which is the argument for the rule. Reports arrive through
-[the symptom template](https://github.com/nightswatchhq/graph-support/issues/new?template=06-symptom.yml)
+[the symptom template](https://github.com/nuthatch-org/graph-support/issues/new?template=06-symptom.yml)
 and get triaged like anything else.
 
 ## Handing off
