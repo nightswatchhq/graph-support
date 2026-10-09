@@ -11,7 +11,7 @@ body:
         rotate it rather than editing the message.
 
         If your error contains `bad indexers`, the
-        [decoder](https://github.com/nightswatchhq/graph-support/blob/main/reference/gateway-errors.md)
+        [decoder](https://github.com/nuthatch-org/graph-support/blob/main/reference/gateway-errors.md)
         may answer it in one minute. Still file if it does not.
   - type: input
     id: deployment

@@ -1,19 +1,19 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Join the Night's Watch Discord
+  - name: Join the Nuthatch Discord
     url: https://discord.gg/CQewvyJ69Y
     about: Talk it through with indexers and subgraph developers while someone is looking at it. Faster than waiting for a write-up if your problem is urgent. File the issue too, so the answer is permanent.
   - name: Decode a gateway error yourself
-    url: https://github.com/nightswatchhq/graph-support/blob/main/reference/gateway-errors.md
+    url: https://github.com/nuthatch-org/graph-support/blob/main/reference/gateway-errors.md
     about: What "bad indexers", BadResponse(400), no attestation and too far behind actually mean. Verified against gateway source. Read this first if your error looks like that.
   - name: Work out who owns the problem
-    url: https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md
+    url: https://github.com/nuthatch-org/graph-support/blob/main/reference/escalation.md
     about: Which failures only The Graph Foundation can fix, which belong to one indexer, and which are yours.
   - name: Check the symptom index first
     url: https://learn-thegraph.com/diagnose/
     about: What you are seeing, what usually causes it, and the check that tells the causes apart. Nearly everything in it fails silently, which is why it persists. Built from the answers in this repo.
   - name: Search past answers
-    url: https://github.com/nightswatchhq/graph-support/issues?q=is%3Aissue
+    url: https://github.com/nuthatch-org/graph-support/issues?q=is%3Aissue
     about: Every question we have answered, open and closed. Search your error text here before filing.
   - name: The Graph Discord
     url: https://discord.gg/graphprotocol

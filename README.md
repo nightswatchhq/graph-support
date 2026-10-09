@@ -6,12 +6,12 @@ This is community triage for subgraph developers, indexers, delegators and anyon
 using The Graph. You get a root cause, a workaround, or the name of the party who can
 actually fix it. You do not get "I'll raise this internally" and then silence.
 
-Run by **The Night's Watch**, an open community for the people who build and hold the data
+Run by **Nuthatch**, an open community for the people who build and hold the data
 layer of web3. We are not Edge & Node, we are not The Graph Foundation, and we have no
 authority over either. We are operators and engineers who use this network every day and
 got tired of watching questions go unanswered.
 
-### 👉 [Join the Night's Watch Discord](https://discord.gg/CQewvyJ69Y)
+### 👉 [Join the Nuthatch Discord](https://discord.gg/CQewvyJ69Y)
 
 File the issue here so the answer is permanent and searchable. Come to the Discord if you
 want to talk it through while someone is actually looking at it, if your problem is
@@ -67,7 +67,7 @@ Some answers already exist. Check before filing:
   verified against gateway source.
 - [Who owns what](reference/escalation.md) — which failures the Foundation alone can fix, which
   belong to an individual indexer, and which are yours.
-- [Closed issues](https://github.com/nightswatchhq/graph-support/issues?q=is%3Aissue+is%3Aclosed)
+- [Closed issues](https://github.com/nuthatch-org/graph-support/issues?q=is%3Aissue+is%3Aclosed)
   — every past answer, searchable. This is the point of the repo.
 - [The symptom index](https://learn-thegraph.com/diagnose/) — what you are seeing, what
   usually causes it, and how to tell which one it is. Built from the write-ups here, so if
@@ -85,7 +85,7 @@ names your address, you are the fastest path to an answer and we would rather ha
 than our guess.
 
 The people doing the answering coordinate in the
-[Night's Watch Discord](https://discord.gg/CQewvyJ69Y). If you know things about this
+[Nuthatch Discord](https://discord.gg/CQewvyJ69Y). If you know things about this
 ecosystem that are not written down anywhere, which is most of what anybody knows, that is
 where to come and be useful. The answer still belongs here afterwards, where it can be
 found again.

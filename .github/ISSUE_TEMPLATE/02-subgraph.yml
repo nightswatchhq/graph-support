@@ -11,7 +11,7 @@ body:
         Worth knowing before you file: if the error contains a `10.x.x.x` address, that is
         inside The Graph Foundation's private network and only they can act on it. We will still
         track it and chase, but see
-        [who owns what](https://github.com/nightswatchhq/graph-support/blob/main/reference/escalation.md).
+        [who owns what](https://github.com/nuthatch-org/graph-support/blob/main/reference/escalation.md).
   - type: input
     id: deployment
     attributes:
